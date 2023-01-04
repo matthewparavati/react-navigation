@@ -14,6 +14,7 @@ import type { EdgeInsets } from 'react-native-safe-area-context';
 
 import { forModalPresentationIOS } from '../../TransitionConfigs/CardStyleInterpolators';
 import type {
+  AnimatedInterpolation,
   GestureDirection,
   Layout,
   StackCardInterpolationProps,
@@ -35,8 +36,8 @@ import CardSheet, { CardSheetRef } from './CardSheet';
 type Props = ViewProps & {
   interpolationIndex: number;
   closing: boolean;
-  next?: Animated.AnimatedInterpolation;
-  current: Animated.AnimatedInterpolation;
+  next?: AnimatedInterpolation;
+  current: AnimatedInterpolation;
   gesture: Animated.Value;
   layout: Layout;
   insets: EdgeInsets;
@@ -351,8 +352,8 @@ export default class Card extends React.Component<Props> {
   private getCardAnimation = memoize(
     (
       interpolationIndex: number,
-      current: Animated.AnimatedInterpolation,
-      next: Animated.AnimatedInterpolation | undefined,
+      current: AnimatedInterpolation,
+      next: AnimatedInterpolation | undefined,
       layout: Layout,
       insetTop: number,
       insetRight: number,

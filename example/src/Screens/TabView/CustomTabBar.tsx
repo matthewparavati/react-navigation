@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+// import type { AnimatedInterpolation } from 'packages/react-native-tab-view/src/types';
 import * as React from 'react';
 import {
   Animated,
@@ -14,6 +15,7 @@ import {
   SceneRendererProps,
   TabView,
 } from 'react-native-tab-view';
+import type { AnimatedInterpolation } from 'react-native-tab-view/src/types';
 
 import Albums from '../../Shared/Albums';
 import Article from '../../Shared/Article';
@@ -51,7 +53,7 @@ const CustomTabBar = () => {
       position,
     }: {
       navigationState: State;
-      position: Animated.AnimatedInterpolation;
+      position: AnimatedInterpolation;
     }) =>
     ({ route, index }: { route: Route; index: number }) => {
       const inputRange = navigationState.routes.map((_, i) => i);

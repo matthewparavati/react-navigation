@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Animated, View, ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
+
+import type { AnimatedInterpolation } from '../types';
 
 let Screens: typeof import('react-native-screens') | undefined;
 
@@ -29,7 +31,7 @@ export const MaybeScreen = ({
   ...rest
 }: ViewProps & {
   enabled: boolean;
-  active: 0 | 1 | Animated.AnimatedInterpolation;
+  active: 0 | 1 | AnimatedInterpolation;
   children: React.ReactNode;
   freezeOnBlur?: boolean;
 }) => {

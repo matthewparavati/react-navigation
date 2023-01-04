@@ -7,7 +7,6 @@ import {
 } from '@react-navigation/elements';
 import * as React from 'react';
 import {
-  Animated,
   LayoutChangeEvent,
   Platform,
   StyleSheet,
@@ -15,6 +14,7 @@ import {
 } from 'react-native';
 
 import type {
+  AnimatedInterpolation,
   Layout,
   SceneProgress,
   StackHeaderOptions,
@@ -75,8 +75,8 @@ export default function HeaderSegment(props: Props) {
     (
       styleInterpolator: StackHeaderStyleInterpolator,
       layout: Layout,
-      current: Animated.AnimatedInterpolation,
-      next: Animated.AnimatedInterpolation | undefined,
+      current: AnimatedInterpolation,
+      next: AnimatedInterpolation | undefined,
       titleLayout: Layout | undefined,
       leftLabelLayout: Layout | undefined,
       headerHeight: number
