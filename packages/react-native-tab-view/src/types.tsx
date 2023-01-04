@@ -31,9 +31,14 @@ export type Layout = {
 
 export type Listener = (value: number) => void;
 
+// Animated.AnimatedInterpolation has been converted to a generic type
+// in @types/react-native 0.70. This way we can maintain compatibility
+// with all versions of @types/react-native
+export type AnimatedInterpolation = ReturnType<Animated.Value['interpolate']>;
+
 export type SceneRendererProps = {
   layout: Layout;
-  position: Animated.AnimatedInterpolation;
+  position: AnimatedInterpolation;
   jumpTo: (key: string) => void;
 };
 
